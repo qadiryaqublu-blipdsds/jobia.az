@@ -1,0 +1,6 @@
+{
+  "name": "jobia.az - Müasir Vakansiya və Ağıllı Karyera Portalı",
+  "description": "jobia.az - Azərbaycanın müasir vakansiya, ağıllı CV və tam HR işə qəbul platforması. AI Müsahibə dəyərləndirməsi, AR Vergi kalkulyatoru, AI Job Offer tərtibatı, birbaşa A4 PDF generasiyası, təhlükəsiz namizəd portali və 1 kliklə e-poçt göndərişi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

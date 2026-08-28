@@ -1,0 +1,191 @@
+{
+  "rules": {
+    "users": {
+      "description": "User profiles for candidates, employers, and admin accounts",
+      "fields": {
+        "uid": "string",
+        "email": "string",
+        "fullName": "string",
+        "role": "string (candidate | business | admin)",
+        "phone": "string",
+        "companyId": "string (optional)",
+        "companyName": "string (optional)",
+        "status": "string (active | suspended | pending)",
+        "emailVerified": "boolean",
+        "createdAt": "string",
+        "lastLoginAt": "string",
+        "avatarUrl": "string (optional)"
+      }
+    },
+    "companies": {
+      "description": "Registered company profiles and verification statuses",
+      "fields": {
+        "id": "string",
+        "name": "string",
+        "logo": "string",
+        "email": "string",
+        "phone": "string",
+        "website": "string",
+        "industry": "string",
+        "size": "string",
+        "description": "string",
+        "address": "string",
+        "contactPerson": "string",
+        "contactPosition": "string",
+        "verified": "boolean",
+        "verificationStatus": "string (pending | verified | rejected | suspended)",
+        "createdBy": "string (user uid)",
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
+    },
+    "candidateProfiles": {
+      "description": "Detailed candidate resumes, education, skills, and portfolio",
+      "fields": {
+        "id": "string (user uid)",
+        "userId": "string",
+        "fullName": "string",
+        "professionalTitle": "string",
+        "profilePhoto": "string",
+        "about": "string",
+        "phone": "string",
+        "email": "string",
+        "location": "string",
+        "skills": "array",
+        "languages": "array",
+        "education": "array",
+        "workExperience": "array",
+        "certifications": "array",
+        "expectedSalary": "number",
+        "preferredEmploymentType": "string",
+        "preferredLocation": "string",
+        "cvUrl": "string (optional)",
+        "cvFileName": "string (optional)",
+        "profileVisibility": "string (public | private)",
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
+    },
+    "jobs": {
+      "description": "Recruitment vacancies published by verified companies",
+      "fields": {
+        "id": "string",
+        "title": "string",
+        "department": "string (optional)",
+        "category": "string",
+        "companyId": "string",
+        "companyName": "string",
+        "companyLogo": "string",
+        "companyVerified": "boolean",
+        "city": "string",
+        "location": "string",
+        "workplaceType": "string (remote | hybrid | on-site)",
+        "employmentType": "string",
+        "experienceLevel": "string",
+        "education": "string (optional)",
+        "minSalary": "number (optional)",
+        "maxSalary": "number (optional)",
+        "currency": "string",
+        "hideSalary": "boolean",
+        "skills": "array",
+        "description": "string",
+        "responsibilities": "array",
+        "requirements": "array",
+        "benefits": "array",
+        "deadline": "string",
+        "postedDate": "string",
+        "status": "string (draft | pending_review | published | rejected | paused | closed)",
+        "isApproved": "boolean",
+        "isFeatured": "boolean",
+        "viewsCount": "number",
+        "applicantsCount": "number",
+        "contactPhone": "string (optional)",
+        "contactWhatsapp": "string (optional)",
+        "createdBy": "string (employer user uid)",
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
+    },
+    "applications": {
+      "description": "Real candidate applications to published jobs",
+      "fields": {
+        "id": "string",
+        "jobId": "string",
+        "jobTitle": "string",
+        "companyId": "string",
+        "companyName": "string",
+        "candidateId": "string (user uid)",
+        "candidateName": "string",
+        "candidateEmail": "string",
+        "candidatePhone": "string",
+        "candidatePhoto": "string (optional)",
+        "cvUrl": "string (optional)",
+        "coverLetter": "string (optional)",
+        "expectedSalary": "number (optional)",
+        "status": "string (Applied | Reviewing | Shortlisted | Interview | Offer | Hired | Rejected)",
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
+    },
+    "savedJobs": {
+      "description": "Candidate bookmarked vacancies",
+      "fields": {
+        "id": "string",
+        "userId": "string",
+        "jobId": "string",
+        "savedAt": "string"
+      }
+    },
+    "notifications": {
+      "description": "Real-time user notifications for status changes, offers and applications",
+      "fields": {
+        "id": "string",
+        "userId": "string",
+        "title": "string",
+        "message": "string",
+        "type": "string (application_submitted | status_changed | interview_invite | job_offer | company_verification | vacancy_approval | new_applicant)",
+        "isRead": "boolean",
+        "link": "string (optional)",
+        "data": "object (optional)",
+        "createdAt": "string"
+      }
+    },
+    "jobOffers": {
+      "description": "Official job offers made from employers to candidates",
+      "fields": {
+        "id": "string",
+        "jobId": "string",
+        "jobTitle": "string",
+        "companyId": "string",
+        "companyName": "string",
+        "candidateId": "string",
+        "candidateName": "string",
+        "candidateEmail": "string",
+        "salary": "number",
+        "currency": "string",
+        "startDate": "string",
+        "employmentType": "string",
+        "location": "string",
+        "workingSchedule": "string",
+        "benefits": "array",
+        "additionalTerms": "string",
+        "expirationDate": "string",
+        "status": "string (pending | accepted | declined | expired)",
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
+    },
+    "adminLogs": {
+      "description": "Audit trails for moderation and administrative actions",
+      "fields": {
+        "id": "string",
+        "adminId": "string",
+        "action": "string",
+        "targetType": "string",
+        "targetId": "string",
+        "details": "string",
+        "timestamp": "string"
+      }
+    }
+  }
+}
